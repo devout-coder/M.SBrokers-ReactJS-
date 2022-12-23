@@ -11,3 +11,114 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbar{
+
+  display: flex;
+
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+  width:80%;
+  margin-left: 80px;
+
+  margin-left: 150px;
+}
+.navbar h1{
+  color: rgb(157, 72, 72);
+  font-size: 50px;
+}
+.logo {
+  height: 80px;
+  width: 80px;
+  background-image: url(../src/assets/zerodha.png);
+  background-position: center;
+  background-size: contain;
+}
+.pannel{
+  display: flex;
+}
+.pannel p{
+color: black;
+margin: 10px;
+font-size:20px;
+text-decoration: none;
+
+}
+.searchbar{
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left:75px;
+}
+.searchbar input{
+  padding: 0 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 85%;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 20px;
+
+}
+.buttons{
+  
+width: 88%;
+
+display: flex;
+justify-content: space-between;
+
+}
+.buttons button{
+
+  font-weight: bolder;
+  padding: 15px 20px;
+background-color: whitesmoke;
+font-size: 15px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+.buttons button:hover{
+  background-color:rgb(157, 72, 72);
+  color:  white;
+  border: 1px solid rgb(157, 72, 72);
+}
+.ul{
+  margin-left: 67px;
+}
+.ul li{
+  font-size: 17px;
+  border-radius: 5px;
+  list-style: none;
+  margin: 5px;
+  background-color: whitesmoke;
+  width: 83%;
+  margin-left:47px;
+  padding: 0 20px;
+  
+}
+.Item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.symbol{
+  width: 33%;
+}
+.ltp{
+  width: 33%;
+}
+.change{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
+.red{
+  color: red;
+
+}
+.green{
+  color: green;
+}
