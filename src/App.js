@@ -16,7 +16,7 @@ export default function App() {
       'X-RapidAPI-Key': '3da147d207msh81549da6e4e8910p10a44ajsn1bcc5dcf03bb',
       'X-RapidAPI-Host': 'latest-stock-price.p.rapidapi.com'
     }
-  };
+  }
   fetch('https://latest-stock-price.p.rapidapi.com/any', options)
     .then(response => response.json())
     .then(response => {
