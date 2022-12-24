@@ -25,7 +25,7 @@ export default function App() {
       setdata(stocks)
       console.log(response)})
     .catch(err => console.error(err));
-  },[type])
+  },[type,stocks])
 
 const handleFilter = (name)=>{
 setdata(stocks.filter((stock)=>{
