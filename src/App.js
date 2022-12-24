@@ -6,9 +6,9 @@ import {useState,useEffect} from 'react';
 
 
 export default function App() {
-  const[Stocks,setStocks] = useState([])
+  const[stocks,setStocks] = useState([])
   const[data,setdata] = useState([])
-  const [Type,setType] = useState('Fetching')
+  const [type,setType] = useState('Fetching')
   useEffect(()=>{
   const options = {
     method: 'GET',
@@ -22,44 +22,46 @@ export default function App() {
     .then(response => {
       setType('Fetched')
       setStocks(response)
-      setdata(Stocks)
+      setdata(stocks)
       console.log(response)})
     .catch(err => console.error(err));
-  },[Type])
+  },[type])
 
-function handleFilter(name){
-setdata(Stocks.filter((stock)=>{
-  if(name == ''){
+const handleFilter = (name)=>{
+setdata(stocks.filter((stock)=>{
+  if(name === ''){
     return stock
   }
-  else if(stock.symbol.toLowerCase().includes(name.toLowerCase())) {
+  //else(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
+  else{
     return stock
   }
+
 }))  
 }
-function handleRenderData(val){
+const handleRenderData = (val)=>{
 if(val === 'Advance'){
-  setdata(Stocks.filter(stock=>stock.pChange>0))
+  setdata(stocks.filter(stock=>stock.pChange>0))
 }
 if(val === 'Decline'){
-  setdata(Stocks.filter(stock=>stock.pChange<0))
+  setdata(stocks.filter(stock=>stock.pChange<0))
 }
 if(val === 'TopGainers'){
-let newData = Stocks.filter(stock=>stock.pChange>0)
+let newData = stocks.filter(stock=>stock.pChange>0)
 newData.sort((a,b)=>b.pChange-a.pChange)
  let TopTen = newData.slice(0,11)
 setdata(TopTen)
 
 }
 if(val === 'TopLoosers'){
-  let newData = Stocks.filter(stock=>stock.pChange<0)
+  let newData = stocks.filter(stock=>stock.pChange<0)
   newData.sort((a,b)=>a.pChange-b.pChange)
   let TopTen = newData.slice(0,11)
   setdata(TopTen)
 }
 }
 
-if(Type === 'Fetching'){
+if(type === 'Fetching'){
   return(
     <>
     <Navbar/>
@@ -70,13 +72,13 @@ if(Type === 'Fetching'){
 
   )
 }
-if(Type === 'Fetched'){
+if(type === 'Fetched'){
 
   return (
     <>
-    <Navbar/>``
+    <Navbar/>
     <SearchBar RenderType={handleRenderData} filter={handleFilter}  />
-    <ListItems Stocks={data}/>
+    <ListItems stocks={data}/>
     </>
 );
 }
