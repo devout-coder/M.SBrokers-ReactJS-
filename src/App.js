@@ -74,8 +74,7 @@ if(Type === 'Fetched'){
 
   return (
     <>
-    <Navbar/>
-    
+    <Navbar/>``
     <SearchBar RenderType={handleRenderData} filter={handleFilter}  />
     <ListItems Stocks={data}/>
     </>
