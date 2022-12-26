@@ -35,7 +35,7 @@ export default function App() {
     // setType('fetched')
     // setStocks(OriginalData)
     // setdata(OriginalData)
-  },[type])
+  },)
 
 const handleFilter = (name)=>{
 setStocks(data.filter((stock)=>{
