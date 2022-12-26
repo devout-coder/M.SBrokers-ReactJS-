@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.loading{
+  margin-left: 600px;
+}
 .navbar{
 
   display: flex;
@@ -85,7 +88,7 @@ font-size: 15px;
   border: 1px solid rgb(157, 72, 72);
 }
 .ul{
-  margin-left: 67px;
+  margin-left: 107px;
 }
 .ul li{
   font-size: 17px;

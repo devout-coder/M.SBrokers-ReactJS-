@@ -9,6 +9,10 @@ export default function App() {
   const[stocks,setStocks] = useState([])
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
+
+
+
+  //useEffect 
   useEffect(()=>{
   const options = {
     method: 'GET',
@@ -17,23 +21,29 @@ export default function App() {
       'X-RapidAPI-Host': 'latest-stock-price.p.rapidapi.com'
     }
   }
-  fetch('https://latest-stock-price.p.rapidapi.com/any', options)
+ fetch('https://latest-stock-price.p.rapidapi.com/any',options)
     .then(response => response.json())
     .then(response => {
-      setType('Fetched')
+     setType('Fetched')
       setStocks(response)
       setdata(stocks)
-      console.log(response)})
-    .catch(err => console.error(err));
-  },[type,stocks])
+      console.log(response)
+      console.log('first time')
+    })
+    .catch(() => console.error('error caught could not fetch data'))
+
+    // setType('fetched')
+    // setStocks(OriginalData)
+    // setdata(OriginalData)
+  },[type])
 
 const handleFilter = (name)=>{
-setdata(stocks.filter((stock)=>{
+setStocks(data.filter((stock)=>{
   if(name === ''){
     return stock
   }
   //else(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
-  else{
+  else if(stock.symbol.toLowerCase().includes(name.toLowerCase())){
     return stock
   }
 
@@ -41,23 +51,23 @@ setdata(stocks.filter((stock)=>{
 }
 const handleRenderData = (val)=>{
 if(val === 'Advance'){
-  setdata(stocks.filter(stock=>stock.pChange>0))
+  setStocks(data.filter(stock=>stock.pChange>0))
 }
 if(val === 'Decline'){
-  setdata(stocks.filter(stock=>stock.pChange<0))
+  setStocks(data.filter(stock=>stock.pChange<0))
 }
 if(val === 'TopGainers'){
-let newData = stocks.filter(stock=>stock.pChange>0)
+let newData = data.filter(stock=>stock.pChange>0)
 newData.sort((a,b)=>b.pChange-a.pChange)
  let TopTen = newData.slice(0,11)
-setdata(TopTen)
+ setStocks(TopTen)
 
 }
 if(val === 'TopLoosers'){
-  let newData = stocks.filter(stock=>stock.pChange<0)
+  let newData = data.filter(stock=>stock.pChange<0)
   newData.sort((a,b)=>a.pChange-b.pChange)
   let TopTen = newData.slice(0,11)
-  setdata(TopTen)
+  setStocks(TopTen)
 }
 }
 
@@ -67,18 +77,18 @@ if(type === 'Fetching'){
     <Navbar/>
 
     <SearchBar />
-    <h1>Loading...</h1>
+    <h1 className='loading'>Loading...</h1>
     </>
 
   )
 }
 if(type === 'Fetched'){
 
-  return (
-    <>
+  return(
+          <>
     <Navbar/>
-    <SearchBar RenderType={handleRenderData} filter={handleFilter}  />
-    <ListItems stocks={data}/>
+    <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
+    <ListItems stocks={stocks}/>
     </>
 );
 }
