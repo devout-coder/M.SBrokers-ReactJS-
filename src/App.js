@@ -6,11 +6,11 @@ import {useState,useEffect} from 'react';
 
 
 export default function App() {
-  const[stocks,setStocks] = useState([])
+
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
 
-
+  const stocks = null;
 
   //useEffect 
   useEffect(()=>{
@@ -29,7 +29,7 @@ export default function App() {
       if(response.length !== 0){
 
         setType('Fetched')
-        setStocks(response)
+        stocks = response
         setdata(stocks)
         console.log(response)
         console.log('first time')
@@ -43,12 +43,12 @@ export default function App() {
     return ()=>{controller.abort()}
 
     // setType('fetched')
-    // setStocks(OriginalData)
+    // setdata(OriginalData)
     // setdata(OriginalData)
   },[])
 
 const handleFilter = (name)=>{
-setStocks(data.filter((stock)=>{
+setdata(stocks.filter((stock)=>{
    if(stock.symbol.toLowerCase().includes(name.toLowerCase())){
     return stock
   }
@@ -61,23 +61,23 @@ setStocks(data.filter((stock)=>{
 }
 const handleRenderData = (val)=>{
 if(val === 'Advance'){
-  setStocks(data.filter(stock=>stock.pChange>0))
+  setdata(stocks.filter(stock=>stock.pChange>0))
 }
 if(val === 'Decline'){
-  setStocks(data.filter(stock=>stock.pChange<0))
+  setdata(stocks.filter(stock=>stock.pChange<0))
 }
 if(val === 'TopGainers'){
-let newData = data.filter(stock=>stock.pChange>0)
+let newData = stocks.filter(stock=>stock.pChange>0)
 newData.sort((a,b)=>b.pChange-a.pChange)
  let TopTen = newData.slice(0,11)
- setStocks(TopTen)
+ setdata(TopTen)
 
 }
 if(val === 'TopLoosers'){
-  let newData = data.filter(stock=>stock.pChange<0)
+  let newData = stocks.filter(stock=>stock.pChange<0)
   newData.sort((a,b)=>a.pChange-b.pChange)
   let TopTen = newData.slice(0,11)
-  setStocks(TopTen)
+  setdata(TopTen)
 }
 }
 
