@@ -104,7 +104,7 @@ if(type === 'TryAgain'){
 
     {/* <SearchBar /> */}
     <h1 className='sorryinfo'>Could not fetch data kindly refresh the page</h1>
-    <h1 className='sorry'></h1>
+    <div className='sorry'></div>
     </>
 
   )
