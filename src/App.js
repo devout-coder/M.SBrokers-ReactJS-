@@ -14,6 +14,8 @@ export default function App() {
 
   //useEffect 
   useEffect(()=>{
+    let controller = new AbortController()
+    let signal = controller.signal;
   const options = {
     method: 'GET',
     headers: {
@@ -21,31 +23,39 @@ export default function App() {
       'X-RapidAPI-Host': 'latest-stock-price.p.rapidapi.com'
     }
   }
- fetch('https://latest-stock-price.p.rapidapi.com/any',options)
+ fetch('https://latest-stock-price.p.rapidapi.com/any',options,signal)
     .then(response => response.json())
     .then(response => {
-     setType('Fetched')
-      setStocks(response)
-      setdata(stocks)
-      console.log(response)
-      console.log('first time')
+      if(response.length != 0){
+
+        setType('Fetched')
+        setStocks(response)
+        setdata(stocks)
+        console.log(response)
+        console.log('first time')
+      }
+      else{
+        console.log('not fetched');
+        setType('TryAgain')
+      }
     })
-    .catch(() => console.error('error caught could not fetch data'))
+    .catch(() => console.log('error caught could not fetch data'))
+    return ()=>{controller.abort()}
 
     // setType('fetched')
     // setStocks(OriginalData)
     // setdata(OriginalData)
-  },)
+  },[])
 
 const handleFilter = (name)=>{
 setStocks(data.filter((stock)=>{
-  if(name === ''){
+   if(stock.symbol.toLowerCase().includes(name.toLowerCase())){
+    return stock
+  }
+  else{
     return stock
   }
   //else(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
-  else if(stock.symbol.toLowerCase().includes(name.toLowerCase())){
-    return stock
-  }
 
 }))  
 }
@@ -78,6 +88,17 @@ if(type === 'Fetching'){
 
     <SearchBar />
     <h1 className='loading'>Loading...</h1>
+    </>
+
+  )
+}
+if(type === 'TryAgain'){
+  return(
+    <>
+    <Navbar/>
+
+    <SearchBar />
+    <h1 className='loading'>Sorry For Inconvienience Kindly Refresh The Page....</h1>
     </>
 
   )
