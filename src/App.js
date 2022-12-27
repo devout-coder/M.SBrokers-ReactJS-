@@ -3,10 +3,12 @@ import ListItems from './ListItems.jsx'
 import SearchBar from'./SearchBar.jsx'
 
 import {useState,useEffect} from 'react';
-
+let stocks = null;
 
 export default function App() {
-  const[stocks,setStocks] = useState([])
+  // const[stocks,setStocks] = useState([])
+
+
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
   useEffect(()=>{
@@ -21,19 +23,26 @@ export default function App() {
     .then(response => response.json())
     .then(response => {
       setType('Fetched')
-      setStocks(response)
+      console.log(response)
+      // setStocks(response)
+      stocks = response
       setdata(stocks)
-      console.log(response)})
+    })
     .catch(err => console.error(err));
-  },[type,stocks])
+   
+
+  },[])
+
+  
+
 
 const handleFilter = (name)=>{
 setdata(stocks.filter((stock)=>{
   if(name === ''){
     return stock
   }
-  //else(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
-  else{
+  else if(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
+{
     return stock
   }
 
@@ -82,6 +91,6 @@ if(type === 'Fetched'){
     </>
 );
 }
+
+
 }
-
-
