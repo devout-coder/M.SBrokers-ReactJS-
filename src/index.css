@@ -11,15 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.maincontainer{
+display: flex;
+justify-content: space-around;
+}
+.newscontainer{
+  height: 650px;
+  border-left: 1px solid slategrey;
+  border-right: 1px solid slategrey;
+  width: 750px;
+  overflow: scroll;
+}
+.newsimage{
+  margin-right: 20px;
+}
+.outlook{
+  margin-left: 50px;
+  color: rgb(157, 72, 72);
+}
+.newsIMG{
+  height: 120px;
+  width: 120px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+.newslink{
+  text-decoration: none;
+}
+.newsItem{
+  margin-right: 50px;
+  box-shadow:
+  0px 36px 80px rgba(0, 0, 0, 0.09)
+;
+  border: 1px solid lightslategray;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+
+}
+
+
 .loading{
   margin-left: 500px;
-  margin-top:50px;
+  margin-top:80px;
 
   width: 400px;
   height: 400px;
   background-image: url(./assets/gif.gif);
   background-position: center;
   background-size: contain;
+  
 }.sorryinfo{
   margin-left: 400px;
 }
@@ -53,6 +97,7 @@ code {
   font-size: 50px;
 }
 .logo {
+
   height: 80px;
   width: 80px;
   background-image: url(../src/assets/zerodha.png);
@@ -70,21 +115,27 @@ text-decoration: none;
 
 }
 .searchbar{
-  width: 90%;
+  margin-left: 50px;
+
+  width: 470px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left:75px;
+
 }
 .searchbar input{
   padding: 0 20px;
   border: 1px solid black;
   border-radius: 5px;
-  width: 85%;
-  height: 50px;
-  font-size: 20px;
+  width: 90%;
+  height: 30px;
+  font-size: 15px;
   margin-bottom: 20px;
+  margin-top: 15px;
 
 }
 .buttons{
@@ -96,13 +147,14 @@ justify-content: space-between;
 
 }
 .buttons button{
-
+margin: 0 42px 10px 0;
   font-weight: bolder;
-  padding: 15px 20px;
+  padding: 5px 10px;
 background-color: whitesmoke;
 font-size: 15px;
   border: 1px solid black;
-  border-radius: 4px;
+  border-radius: 8px;
+  color: rgb(157, 72, 72);
 }
 .buttons button:hover{
   background-color:rgb(157, 72, 72);
@@ -110,7 +162,36 @@ font-size: 15px;
   border: 1px solid rgb(157, 72, 72);
 }
 .ul{
-  margin-left: 107px;
+
+}
+.listcontainer{
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow:
+  0px 1.6px 8.7px rgba(0, 0, 0, 0.111),
+  0px 4.5px 19.5px rgba(0, 0, 0, 0.16),
+  0px 10.9px 35px rgba(0, 0, 0, 0.209),
+  0px 36px 80px rgba(0, 0, 0, 0.32)
+;
+  width: 470px;
+  height: 520px;
+  overflow: scroll;
+  margin-left: 50px;
+}
+.heading{
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  font-size: 23px;
+  color: rgb(157, 72, 72);
+
+  height: 40px;
+}
+.heading p{
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
 }
 .ul li{
   font-size: 17px;
@@ -118,9 +199,10 @@ font-size: 15px;
   list-style: none;
   margin: 5px;
   background-color: whitesmoke;
-  width: 83%;
-  margin-left:47px;
-  padding: 0 20px;
+  width: 99%;
+  padding: 0 10px 0 10px;
+
+
   
 }
 .Item{

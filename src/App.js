@@ -1,20 +1,24 @@
 import Navbar from './Navbar.jsx'
 import ListItems from './ListItems.jsx'
 import SearchBar from'./SearchBar.jsx'
+import News from "./news.jsx"
 
 import {useState,useEffect} from 'react';
 
 let stocks = null
+let newsdata = null
+fetch('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=53579bd4f3c44b59b6cb9a017c65f583').then(res=>res.json()).then(res=>{console.log(res)
+newsdata = res.articles
+}).catch(console.log('cannot fetch news api'))
 export default function App() {
 
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
 
-
-
   //useEffect 
   useEffect(()=>{
-
+    let controller = new AbortController()
+    let signal = controller.signal;
 
   const options = {
     method: 'GET',
@@ -23,16 +27,13 @@ export default function App() {
       'X-RapidAPI-Host': 'latest-stock-price.p.rapidapi.com'
     }
   }
- fetch('https://latest-stock-price.p.rapidapi.com/any',options)
+ fetch('https://latest-stock-price.p.rapidapi.com/any',options,signal)
     .then(response => response.json())
     .then(response => {
       if(response.length !== 0){
-
         setType('Fetched')
         stocks = response
         setdata(stocks)
-        console.log(response)
-        console.log('first time')
       }
       else{
         console.log('not fetched');
@@ -40,11 +41,7 @@ export default function App() {
       }
     })
     .catch(() => console.log('error caught could not fetch data'))
-
-
-    // setType('fetched')
-    // setdata(OriginalData)
-    // setdata(OriginalData)
+    return ()=>{controller.abort()}
   },[])
 
 const handleFilter = (name)=>{
@@ -87,11 +84,6 @@ if(val === 'TopLoosers'){
 if(type === 'Fetching'){
   return(
     <>
-    <Navbar/>
-
-    {/* <SearchBar /> */}
-    {/* <h1 className='loading'>Loading.....</h1> */}
-
     <div className='loading' ></div>
     </>
 
@@ -99,23 +91,28 @@ if(type === 'Fetching'){
 }
 if(type === 'TryAgain'){
   return(
-    <>
+    <div className="maincontainer">
     <Navbar/>
-
-    {/* <SearchBar /> */}
     <h1 className='sorryinfo'>Could not fetch data kindly refresh the page</h1>
     <div className='sorry'></div>
-    </>
+    </div>
 
   )
 }
 if(type === 'Fetched'){
 
   return(
-          <>
-    <Navbar/>
-    <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
-    <ListItems stocks={data}/>
+    <>
+        <Navbar/>
+    <div className='maincontainer'>
+      <div className="container">
+        <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
+        <ListItems stocks={data}/>
+      </div>
+      <div className='newscontainer'>
+        <News news={newsdata}/>
+      </div>
+    </div>
     </>
 );
 }

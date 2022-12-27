@@ -1,7 +1,12 @@
 
 const ListItems = ({stocks}) =>{
     return (
-        <>
+        <div className="listcontainer">
+            <li className="heading">
+                <p>Index</p>
+                <p>Price</p>
+                <p>Change %</p>
+            </li>
             {stocks?.map(stock => {
                 return (
                     <section className="ul">
@@ -13,6 +18,7 @@ const ListItems = ({stocks}) =>{
                                 <p className="symbol" >{stock?.symbol}</p>
                                 <p className="ltp">₹ {stock?.lastPrice}</p>
                                 <p className="change">{stock?.pChange} %</p>
+                                
                             </div>
                         </li>
                         </a>
@@ -32,7 +38,7 @@ const ListItems = ({stocks}) =>{
                     ) }
             </section> )
             })}
-        </>
+        </div>
     )
 
 }
