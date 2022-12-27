@@ -4,7 +4,7 @@ import SearchBar from'./SearchBar.jsx'
 
 import {useState,useEffect} from 'react';
 
-
+let stocks = null
 export default function App() {
 
   const[data,setdata] = useState([])
@@ -14,8 +14,8 @@ export default function App() {
 
   //useEffect 
   useEffect(()=>{
-    let controller = new AbortController()
-    let signal = controller.signal;
+
+
   const options = {
     method: 'GET',
     headers: {
@@ -23,7 +23,7 @@ export default function App() {
       'X-RapidAPI-Host': 'latest-stock-price.p.rapidapi.com'
     }
   }
- fetch('https://latest-stock-price.p.rapidapi.com/any',options,signal)
+ fetch('https://latest-stock-price.p.rapidapi.com/any',options)
     .then(response => response.json())
     .then(response => {
       if(response.length !== 0){
@@ -40,7 +40,7 @@ export default function App() {
       }
     })
     .catch(() => console.log('error caught could not fetch data'))
-    return ()=>{controller.abort()}
+
 
     // setType('fetched')
     // setdata(OriginalData)
