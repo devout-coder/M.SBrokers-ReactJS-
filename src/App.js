@@ -26,7 +26,7 @@ export default function App() {
  fetch('https://latest-stock-price.p.rapidapi.com/any',options,signal)
     .then(response => response.json())
     .then(response => {
-      if(response.length != 0){
+      if(response.length !== 0){
 
         setType('Fetched')
         setStocks(response)
