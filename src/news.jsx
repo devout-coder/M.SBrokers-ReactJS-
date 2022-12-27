@@ -8,12 +8,12 @@
             return (
             <li className="newsItem" key={count++}>
                 <div className="newsimage" >
-                    <img className="newsIMG" src={item?.urlToImage} alt=""  />
+                    <img className="newsIMG" src={item.imageUrl} alt=""  />
                 </div>
                 <div className="feed">
                     <h3>{item?.title}</h3>
-                    <p>{`${item?.source.name} | ${item.publishedAt}`}</p>
-                    <p>{item?.description} <a className="newslink" href={item?.url}>See More..</a></p>
+                    <p>{`${item?.author} | ${item.date} ${item?.time}`}</p>
+                    <p>{item?.content} <a className="newslink" href={item?.readMoreUrl}>See More..</a></p>
                 </div>
             </li>)}
             )}
