@@ -7,6 +7,11 @@ import {useState,useEffect} from 'react';
 
 let stocks = null
 let newsdata = null
+
+fetch("https://inshorts.deta.dev/news?category=business").then(res=>res.json()).then(res=>{console.log(res)
+
+}).catch(console.log('cannot fetch news api'))
+
 fetch('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=53579bd4f3c44b59b6cb9a017c65f583').then(res=>res.json()).then(res=>{console.log(res)
 newsdata = res.articles
 }).catch(console.log('cannot fetch news api'))
