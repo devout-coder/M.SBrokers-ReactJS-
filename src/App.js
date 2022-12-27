@@ -89,8 +89,10 @@ if(type === 'Fetching'){
     <>
     <Navbar/>
 
-    <SearchBar />
-    <h1 className='loading'>Loading...</h1>
+    {/* <SearchBar /> */}
+    {/* <h1 className='loading'>Loading.....</h1> */}
+
+    <div className='loading' ></div>
     </>
 
   )
@@ -100,8 +102,9 @@ if(type === 'TryAgain'){
     <>
     <Navbar/>
 
-    <SearchBar />
-    <h1 className='loading'>Sorry For Inconvienience Kindly Refresh The Page....</h1>
+    {/* <SearchBar /> */}
+    <h1 className='sorryinfo'>Could not fetch data kindly refresh the page</h1>
+    <h1 className='sorry'></h1>
     </>
 
   )

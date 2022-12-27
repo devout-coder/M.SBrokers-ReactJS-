@@ -12,7 +12,26 @@ code {
     monospace;
 }
 .loading{
-  margin-left: 600px;
+  margin-left: 500px;
+  margin-top:50px;
+
+  width: 400px;
+  height: 400px;
+  background-image: url(./assets/gif.gif);
+  background-position: center;
+  background-size: contain;
+}.sorryinfo{
+  margin-left: 400px;
+}
+.sorry{
+  margin-left: 500px;
+  margin-top: 100px;
+
+  width: 400px;
+  height: 400px;
+  background-image: url(./assets/tryagaingif.gif);
+  background-position: center;
+  background-size: contain;
 }
 .navbar{
 
@@ -25,6 +44,9 @@ code {
   margin-left: 80px;
 
   margin-left: 150px;
+}
+.links{
+  text-decoration: none;
 }
 .navbar h1{
   color: rgb(157, 72, 72);
