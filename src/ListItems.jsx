@@ -30,4 +30,5 @@ const ListItems = ({stocks}) =>{
 
 }
 
+
 export default ListItems

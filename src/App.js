@@ -3,9 +3,17 @@ import ListItems from './ListItems.jsx'
 import SearchBar from'./SearchBar.jsx'
 
 import {useState,useEffect} from 'react';
+<<<<<<< HEAD
 
 let stocks = null
 export default function App() {
+=======
+let stocks = null;
+
+export default function App() {
+  // const[stocks,setStocks] = useState([])
+
+>>>>>>> experiments
 
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
@@ -26,6 +34,7 @@ export default function App() {
  fetch('https://latest-stock-price.p.rapidapi.com/any',options)
     .then(response => response.json())
     .then(response => {
+<<<<<<< HEAD
       if(response.length !== 0){
 
         setType('Fetched')
@@ -46,13 +55,33 @@ export default function App() {
     // setdata(OriginalData)
     // setdata(OriginalData)
   },[])
+=======
+      setType('Fetched')
+      console.log(response)
+      // setStocks(response)
+      stocks = response
+      setdata(stocks)
+    })
+    .catch(err => console.error(err));
+   
+
+  },[])
+
+  
+
+>>>>>>> experiments
 
 const handleFilter = (name)=>{
 setdata(stocks.filter((stock)=>{
    if(stock.symbol.toLowerCase().includes(name.toLowerCase())){
     return stock
   }
+<<<<<<< HEAD
   else{
+=======
+  else if(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
+{
+>>>>>>> experiments
     return stock
   }
   //else(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
@@ -113,6 +142,6 @@ if(type === 'Fetched'){
     </>
 );
 }
+
+
 }
-
-
