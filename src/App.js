@@ -2,16 +2,12 @@ import Navbar from './Navbar.jsx'
 import ListItems from './ListItems.jsx'
 import SearchBar from'./SearchBar.jsx'
 import News from "./news.jsx"
+import { Player } from '@lottiefiles/react-lottie-player';
 
 import {useState,useEffect} from 'react';
 
 let stocks = null
-// let newsdata = null
 
-
-// fetch("https://inshorts.deta.dev/news?category=business").then(res=>res.json()).then(res=>{console.log(res.data)
-//   newsdata = res.data
-// }).catch(console.log('cannot fetch news api'))
 
 export default function App() {
 
@@ -69,7 +65,7 @@ setdata(stocks.filter((stock)=>{
   if(name === " "){
     return stock
   }
-  //else(stock.symbol.toLowerCase().includes(name.toLowerCase())) 
+ 
   else{
     return null
   }
@@ -101,7 +97,14 @@ if(val === 'TopLoosers'){
 if(type === 'Fetching'){
   return(
     <>
-    <div className='loading' ></div>
+    <div className='loading' >
+         <Player
+              autoplay
+              loop
+              src="https://assets9.lottiefiles.com/packages/lf20_kxsd2ytq.json"
+              style={{ height: '300px', width: '300px' }}>
+          </Player>
+    </div>
     </>
 
   )
@@ -109,8 +112,15 @@ if(type === 'Fetching'){
 if(type === 'TryAgain'){
   return(
 <>
-    <h1 className='sorryinfo'>Could not fetch data kindly refresh the page</h1>
-    <div className='sorry'></div>
+    <div className='sorry'>
+       <Player
+              autoplay
+              loop
+              src="https://assets2.lottiefiles.com/packages/lf20_ge2cws3x.json"
+              style={{ height: '600px', width: '600px' }}>
+      </Player>
+    </div>
+
 </>
 
 
@@ -127,7 +137,17 @@ if(type === 'Fetched'){
           <ListItems stocks={data}/>
         </div>
         <div className='newscontainer'>
-          <News news={newsdata}/>
+          {newsdata.length === 0 ? (
+          <div className='loadingNews'>
+            <Player
+              autoplay
+              loop
+              src="https://assets9.lottiefiles.com/private_files/lf30_fup2uejx.json"
+              style={{ height: '300px', width: '300px' }}>
+            </Player>
+          </div>):
+          (<News news={newsdata}/>)
+          }
         </div>
       </div>
     </>
