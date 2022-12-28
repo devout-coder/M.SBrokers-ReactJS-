@@ -6,21 +6,32 @@ import News from "./news.jsx"
 import {useState,useEffect} from 'react';
 
 let stocks = null
-let newsdata = null
+// let newsdata = null
 
 
-fetch("https://inshorts.deta.dev/news?category=business").then(res=>res.json()).then(res=>{console.log(res.data)
-  newsdata = res.data
-}).catch(console.log('cannot fetch news api'))
+// fetch("https://inshorts.deta.dev/news?category=business").then(res=>res.json()).then(res=>{console.log(res.data)
+//   newsdata = res.data
+// }).catch(console.log('cannot fetch news api'))
 
 export default function App() {
 
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
+  const[newsdata,setNewsdata] = useState([])
+
+  //UseEffect News
+useEffect(()=>{
+  let newscontroller = new AbortController()
+  let newsSignal = newscontroller.signal
+  fetch("https://inshorts.deta.dev/news?category=business",newsSignal).then(res=>res.json()).then(res=>{console.log(res.data)
+  setNewsdata(res.data)
+}).catch(console.log('cannot fetch news api'))
+return ()=>{newscontroller.abort()}
+},[])
 
 
-  
-  //useEffect 
+  //useEffect stocks
+
   useEffect(()=>{
     let controller = new AbortController()
     let signal = controller.signal;
@@ -35,6 +46,7 @@ export default function App() {
  fetch('https://latest-stock-price.p.rapidapi.com/any',options,signal)
     .then(response => response.json())
     .then(response => {
+
       if(response.length !== 0){
         setType('Fetched')
         stocks = response
@@ -96,11 +108,11 @@ if(type === 'Fetching'){
 }
 if(type === 'TryAgain'){
   return(
-    <div className="maincontainer">
-    <Navbar/>
+<>
     <h1 className='sorryinfo'>Could not fetch data kindly refresh the page</h1>
     <div className='sorry'></div>
-    </div>
+</>
+
 
   )
 }
@@ -108,16 +120,16 @@ if(type === 'Fetched'){
 
   return(
     <>
-        <Navbar/>
-    <div className='maincontainer'>
-      <div className="container">
-        <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
-        <ListItems stocks={data}/>
+      <Navbar/>
+      <div className='maincontainer'>
+        <div className="container">
+          <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
+          <ListItems stocks={data}/>
+        </div>
+        <div className='newscontainer'>
+          <News news={newsdata}/>
+        </div>
       </div>
-      <div className='newscontainer'>
-        <News news={newsdata}/>
-      </div>
-    </div>
     </>
 );
 }

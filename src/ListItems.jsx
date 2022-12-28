@@ -1,4 +1,4 @@
-
+let count = 0;
 const ListItems = ({stocks}) =>{
     return (
         <div className="listcontainer">
@@ -9,7 +9,7 @@ const ListItems = ({stocks}) =>{
             </li>
             {stocks?.map(stock => {
                 return (
-                    <section className="ul">
+                    <section key={count++} className="ul">
                     {stock?.pChange >= 0 ? (
                         <>  
                         <a key={stock?.identifier} className="links" href={`https://in.tradingview.com/symbols/NSE-${stock.symbol}/`}>
