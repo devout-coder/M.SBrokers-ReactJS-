@@ -146,7 +146,7 @@ if(type === 'Fetched'){
               style={{ height: '300px', width: '300px' }}>
             </Player>
           </div>):
-          (<News news={newsdata}/>)
+          (<News  news={newsdata}/>)
           }
         </div>
       </div>
