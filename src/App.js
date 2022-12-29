@@ -17,9 +17,9 @@ export default function App() {
   const [type,setType] = useState('Fetching')
   const[newsdata,setNewsdata] = useState([])
   const [currentPage,setCurrentPage] = useState(1)
-  const [postPerPage,setPostPerPage] = useState(7)
+  const [postPerPage] = useState(7)
   const [currentNewsPage,setCurrentNewsPage] = useState(2)
-  const [newsPerPage,setNewsPerPage] = useState(2)
+  const [newsPerPage] = useState(2)
 
   //UseEffect News
 useEffect(()=>{
@@ -124,7 +124,7 @@ const CurrentStocksData = data.slice(indexOfFirstPost,indexOfLastPost)
 
 const indexOfLastNews = currentNewsPage*newsPerPage
 const indexOfFirstNews = indexOfLastNews-newsPerPage
-const TotalNewsPages = newsdata.length / newsPerPage
+
 const CurrentNewsData = newsdata.slice(indexOfFirstNews,indexOfLastNews)
 
 if(type === 'Fetching'){
