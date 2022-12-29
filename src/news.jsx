@@ -3,7 +3,7 @@
     return(
         <>
         <h1 className="outlook">Today's Outlook</h1>
-        <ul>
+        <ul className="newscontainer">
             {news?.map((item) => {
             return (
             <li className="newsItem" key={count++}>

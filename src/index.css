@@ -336,3 +336,36 @@ cursor: grab;
 .green{
   color: green;
 }
+@media only screen and (max-width: 401px){
+.maincontainer{
+  display: flex;
+  flex-direction: column;
+}
+.container{
+  margin-left: 80px;
+}
+.newscontainer{
+  display: flex;
+}
+.news-btn{
+  flex-direction: row;
+}
+.newsItem{
+  width: 350px;
+  height: 400px;
+  flex-direction: column;
+}
+.NewsCarousel{
+  flex-direction: column;
+  border: 1px solid black;
+  margin-left: 80px;
+  height: 60px;
+  width: 800px;
+}
+.news-btn :nth-child(2){
+  margin-top: 0px;
+  margin-left: 600px;
+}
+  
+
+}
