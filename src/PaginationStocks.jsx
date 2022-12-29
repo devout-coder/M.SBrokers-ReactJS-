@@ -24,10 +24,10 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
     }}> Prev </buttton>
         {CurrentPages.map(item=>{
             return(
-                <a  onClick={()=>ChangePage(item)}>
+                <button  onClick={()=>ChangePage(item)}>
                 <li key={item}>{item}
             </li>
-                </a>
+                </button>
                 )
         })}
     <buttton className="page-btn" onClick={()=>{

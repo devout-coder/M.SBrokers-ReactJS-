@@ -208,10 +208,10 @@ font-size: 15px;
   0px 10.9px 35px rgba(0, 0, 0, 0.209),
   0px 36px 80px rgba(0, 0, 0, 0.32)
 ;
-  width: 470px;
+  width: 500px;
   height: 460px;
 
-  margin-left: 50px;
+  margin-left: 30px;
 }
 .heading{
   display: flex;
@@ -233,7 +233,7 @@ font-size: 15px;
   list-style: none;
   margin: 5px;
   background-color: whitesmoke;
-  width: 94%;
+  width: 95%;
   padding: 0 10px 0 10px;
 
 
@@ -286,10 +286,15 @@ font-size: 15px;
   background-color: rgb(157, 72, 72);
   color: white;
 }
-.pageList  a{
+.pageList  button{
   text-decoration: none;
   color: white;
-
+  width: 50px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  margin: 0 1.5px;
+  border-radius: 20px;
 }
 
 .symbol{
