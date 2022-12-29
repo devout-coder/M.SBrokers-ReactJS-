@@ -151,9 +151,9 @@ text-decoration: none;
 
 }
 .searchbar{
-  margin-left: 50px;
+  margin-left: 25px;
 
-  width: 470px;
+  width: 500px;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
 
@@ -245,12 +245,17 @@ font-size: 15px;
   justify-content: space-between;
   
 }
+.Item :nth-child(1){width: 180px;}
+.Item :nth-child(2){width: 180px;}
+.Item :nth-child(3){width: 120px;}
 .pageList{
   display: flex;
   justify-content: center;
 
   width: 500px;
 
+position: relative;
+right: 15px;
 }
 .page-btn{
   padding: 10px 10px;
@@ -262,6 +267,7 @@ font-size: 15px;
   margin: 0px 1px;
   border-radius: 15px;
 }
+
 .page-btn:hover{
   background-color: white;
   color: rgb(157, 72, 72);
@@ -273,9 +279,9 @@ font-size: 15px;
   background-color: white;
   color: rgb(157, 72, 72);
   font-weight: bold;
-  width: 50px;
+  width: 52px;
   height: 40px;
-  margin: 0 0.5px;
+  margin: 0 1px;
   border-radius: 20px;
   border: 1px solid rgb(157, 72, 72);
   display: flex;
@@ -293,7 +299,7 @@ font-size: 15px;
   height: 40px;
   border: none;
   padding: 0;
-  margin: 0 1.5px;
+  margin: 0 3px;
   border-radius: 20px;
 }
 

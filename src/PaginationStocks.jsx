@@ -30,7 +30,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
                 </button>
                 )
         })}
-    <buttton className="page-btn" onClick={()=>{
+    <buttton  className="page-btn" onClick={()=>{
         if(lastIndex >=44){
             setStartingIndex(0)
             setLastIndex(8)

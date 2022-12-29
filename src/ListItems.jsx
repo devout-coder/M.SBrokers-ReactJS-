@@ -18,7 +18,6 @@ const ListItems = ({stocks}) =>{
                                 <p className="symbol" >{stock?.symbol}</p>
                                 <p className="ltp">₹ {stock?.lastPrice}</p>
                                 <p className="change">{stock?.pChange} %</p>
-                                
                             </div>
                         </li>
                         </a>
