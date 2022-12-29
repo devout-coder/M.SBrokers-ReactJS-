@@ -24,7 +24,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
     }}> Prev </buttton>
         {CurrentPages.map(item=>{
             return(
-                <a href='#' onClick={()=>ChangePage(item)}>
+                <a  onClick={()=>ChangePage(item)}>
                 <li key={item}>{item}
             </li>
                 </a>
