@@ -36,13 +36,12 @@ right:50px;
 }
 .news-btn button{
   border-radius: 250px;
+  background-color: white;
 width: 60px;
 height: 50px;
   border: 1px solid rgb(157, 72, 72);
   color: rgb(157, 72, 72);
-  box-shadow:
-  1px 11px 80px rgba(0, 0, 0, 0.45)
-;
+ 
 }
 .news-btn :nth-child(2){
   margin-top: 560px;
@@ -252,7 +251,7 @@ font-size: 15px;
   display: flex;
   justify-content: center;
 
-  width: 500px;
+  width: 600px;
 
 position: relative;
 right: 15px;
@@ -260,48 +259,64 @@ right: 15px;
 .page-btn{
   padding: 10px 10px;
   background-color: white;
-  border: 1px solid black;
-  color: darkslateblue;
+  border: 2px solid rgb(157, 72, 72);
+  color: rgb(157, 72, 72);
   font-size: large;
   font-weight:700;
   margin: 0px 1px;
-  border-radius: 15px;
+  border-radius: 25px;
+}
+.page-btn2{
+  padding: 10px 10px;
+  background-color: white;
+  border: 2px solid rgb(157, 72, 72);
+  color: rgb(157, 72, 72);
+  font-size: large;
+  font-weight:700;
+  margin: 0px 1px;
+  border-radius: 25px;
+  margin-left: 0px;
+}
+.page-btn2:hover{
+  background-color: rgb(157, 72, 72);
+  color: white;
+  border: 1px solid rgb(157, 72, 72);
 }
 
+
 .page-btn:hover{
-  background-color: white;
-  color: rgb(157, 72, 72);
+  background-color: rgb(157, 72, 72);
+  color: white;
   border: 1px solid rgb(157, 72, 72);
+}
+.pageList{
+  width: 470px;
+  padding: 0;
+  margin-left: 60px;
 }
 .pageList li{
   list-style: none;
 
-  background-color: white;
-  color: rgb(157, 72, 72);
-  font-weight: bold;
-  width: 52px;
-  height: 40px;
-  margin: 0 1px;
-  border-radius: 20px;
-  border: 1px solid rgb(157, 72, 72);
   display: flex;
   align-items:  center;
   justify-content: center;
 }
-.pageList li:hover{
+
+.pageList  button{
+  background-color: white;
+  color: rgb(157, 72, 72);
+  font-weight: bold;
+  width: 48px;
+  height: 40px;
+cursor: grab;
+  border-radius: 20px;
+  border: 1px solid rgb(157, 72, 72);
+}
+.pageList button:hover{
   background-color: rgb(157, 72, 72);
   color: white;
 }
-.pageList  button{
-  text-decoration: none;
-  color: white;
-  width: 50px;
-  height: 40px;
-  border: none;
-  padding: 0;
-  margin: 0 3px;
-  border-radius: 20px;
-}
+
 
 .symbol{
   width: 33%;

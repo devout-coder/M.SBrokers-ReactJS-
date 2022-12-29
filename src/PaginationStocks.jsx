@@ -24,13 +24,15 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
     }}> Prev </buttton>
         {CurrentPages.map(item=>{
             return(
+                <li key={item}>
                 <button  onClick={()=>ChangePage(item)}>
-                <li key={item}>{item}
-            </li>
+                    {item}
                 </button>
+            </li>
                 )
         })}
-    <buttton  className="page-btn" onClick={()=>{
+
+    <buttton  className="page-btn2" onClick={()=>{
         if(lastIndex >=44){
             setStartingIndex(0)
             setLastIndex(8)
