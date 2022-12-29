@@ -2,6 +2,8 @@ import Navbar from './Navbar.jsx'
 import ListItems from './ListItems.jsx'
 import SearchBar from'./SearchBar.jsx'
 import News from "./news.jsx"
+import { PaginationStocks } from './PaginationStocks.jsx'
+import { PagesNews } from './PaginationNews.jsx'
 import { Player } from '@lottiefiles/react-lottie-player';
 
 import {useState,useEffect} from 'react';
@@ -14,6 +16,10 @@ export default function App() {
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
   const[newsdata,setNewsdata] = useState([])
+  const [currentPage,setCurrentPage] = useState(1)
+  const [postPerPage,setPostPerPage] = useState(7)
+  const [currentNewsPage,setCurrentNewsPage] = useState(2)
+  const [newsPerPage,setNewsPerPage] = useState(2)
 
   //UseEffect News
 useEffect(()=>{
@@ -93,6 +99,33 @@ if(val === 'TopLoosers'){
   setdata(TopTen)
 }
 }
+function handleChangePage(number){
+  setCurrentPage(number)
+}
+function NextNewsPage(){
+  if(currentNewsPage>=13){
+    setCurrentNewsPage(1)
+  }
+  else{
+    setCurrentNewsPage(n=>n+1)
+  }
+}
+function PreviousNewsPage(){
+  if(currentNewsPage<=1){
+    setCurrentNewsPage(1)
+  }
+  else{
+    setCurrentNewsPage(n=>n-1)
+  }
+}
+const indexOfLastPost = currentPage*postPerPage
+const indexOfFirstPost = indexOfLastPost - postPerPage
+const CurrentStocksData = data.slice(indexOfFirstPost,indexOfLastPost)
+
+const indexOfLastNews = currentNewsPage*newsPerPage
+const indexOfFirstNews = indexOfLastNews-newsPerPage
+const TotalNewsPages = newsdata.length / newsPerPage
+const CurrentNewsData = newsdata.slice(indexOfFirstNews,indexOfLastNews)
 
 if(type === 'Fetching'){
   return(
@@ -134,7 +167,9 @@ if(type === 'Fetched'){
       <div className='maincontainer'>
         <div className="container">
           <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
-          <ListItems stocks={data}/>
+          <ListItems stocks={CurrentStocksData}/>
+          <PaginationStocks ChangePage={handleChangePage} TotalPost={data.length} postPerPage={postPerPage}/>
+
         </div>
         <div className='newscontainer'>
           {newsdata.length === 0 ? (
@@ -146,10 +181,14 @@ if(type === 'Fetched'){
               style={{ height: '300px', width: '300px' }}>
             </Player>
           </div>):
-          (<News  news={newsdata}/>)
+          (<News  news={CurrentNewsData}/>)
           }
         </div>
+        <div className='NewsCarousel'>
+          <PagesNews nextNewsPage={NextNewsPage} previousNewsPage={PreviousNewsPage} />
+        </div>
       </div>
+      
     </>
 );
 }
