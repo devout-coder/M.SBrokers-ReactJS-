@@ -443,13 +443,30 @@ padding: 5px 5px;
 .NewsCarousel{
   flex-direction: column;
   border: 1px solid black;
-  margin-left: 80px;
+
   height: 60px;
-  width: 800px;
+  width: 385px;
+  position: relative;
+  bottom: 485px;
+}
+.news-btn{
+  margin-left: 50px;
+}
+.news-btn .button{
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+
+}
+.prev{
+transform: rotate(270deg);
+}
+.next{
+  transform: rotate(270deg);
 }
 .news-btn :nth-child(2){
   margin-top: 0px;
-  margin-left: 600px;
+  margin-left: 260px;
 }
   
 
