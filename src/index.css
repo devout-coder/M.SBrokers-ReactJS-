@@ -336,24 +336,109 @@ cursor: grab;
 .green{
   color: green;
 }
-@media only screen and (max-width: 401px){
+@media only screen and (max-width: 392px){
+  .navbar{
+    margin-left: 5px;
+    border: 1px solid black;
+    width: 390px;
+    justify-content: space-around;
+  }
+  .navbar h1{
+    margin-left: 20px;
+    font-size: 35px;
+  }
+  .pannel{
+    display: none;
+  }
 .maincontainer{
   display: flex;
   flex-direction: column;
 }
 .container{
-  margin-left: 80px;
+
+  width: 390px;
+}
+.searchbar{
+  width: 360px;
+}
+.searchbar input{
+  width: 70%;
+}
+.buttons{
+  width: 80%;
+  margin-left: 0px;
+}
+.buttons button{
+  font-size: 10px;
+  margin: 3px 4px;
+  width: 70px;
+}
+.listcontainer{
+  width: 300px;
+margin:  20px 55px;
+height: 380px;
+padding: 5px 5px;
+
+}
+.heading p{
+  font-size: 15px;
+}
+.ul li{
+  width: 90%;
+}
+.Item p{
+  font-size: 13px;
+}
+.pageList{
+  width: 350px;
+  margin: 0px;
+  margin-left: 50px;
+}
+.pageList button{
+  height: 25px;
+  width: 25px;
+}.page-btn,.page-btn2{
+  height: 20px;
+  width: 30px;
+  font-size: 13px;
+  padding: 5px 5px;
+}
+.newsbox{
+  display: flex;
+  flex-direction: column;
 }
 .newscontainer{
   display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 500px;
+  margin: 0px;
+  padding: 0;
+
+}
+.newsItem{
+  width: 150px;
+  height: 100px;
+  overflow: hidden;
 }
 .news-btn{
   flex-direction: row;
 }
 .newsItem{
   width: 350px;
-  height: 400px;
-  flex-direction: column;
+  height: 30%;
+  flex-direction: row;
+  padding: 10px 10px;
+}
+.newsIMG{
+  height: 60px ;
+  width:60px;
+}
+.feed h3{
+  font-size: 10px;
+}
+.feed p{
+  font-size: 7px;
 }
 .NewsCarousel{
   flex-direction: column;
