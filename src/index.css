@@ -339,12 +339,12 @@ cursor: grab;
 @media only screen and (max-width: 392px){
   .navbar{
     margin-left: 5px;
-    border: 1px solid black;
+
     width: 390px;
     justify-content: space-around;
   }
   .navbar h1{
-    margin-left: 20px;
+    margin-left: 5px;
     font-size: 35px;
   }
   .pannel{
@@ -359,7 +359,8 @@ cursor: grab;
   width: 390px;
 }
 .searchbar{
-  width: 360px;
+  width: 350px;
+  border: none;
 }
 .searchbar input{
   width: 70%;
@@ -374,9 +375,9 @@ cursor: grab;
   width: 70px;
 }
 .listcontainer{
-  width: 300px;
+  width: 280px;
 margin:  20px 55px;
-height: 380px;
+height: 400px;
 padding: 5px 5px;
 
 }
@@ -390,13 +391,14 @@ padding: 5px 5px;
   font-size: 13px;
 }
 .pageList{
-  width: 350px;
+  width: 330px;
   margin: 0px;
   margin-left: 50px;
 }
 .pageList button{
   height: 25px;
   width: 25px;
+  padding: 0 5px;
 }.page-btn,.page-btn2{
   height: 20px;
   width: 30px;
@@ -414,7 +416,13 @@ padding: 5px 5px;
   height: 500px;
   margin: 0px;
   padding: 0;
+  margin-left: 5px;
+  border: none;
 
+}
+.outlook{
+  position: relative;
+  left: 25px;
 }
 .newsItem{
   width: 150px;
@@ -442,12 +450,13 @@ padding: 5px 5px;
 }
 .NewsCarousel{
   flex-direction: column;
-  border: 1px solid black;
+
 
   height: 60px;
   width: 385px;
   position: relative;
   bottom: 485px;
+
 }
 .news-btn{
   margin-left: 50px;
@@ -460,13 +469,14 @@ padding: 5px 5px;
 }
 .prev{
 transform: rotate(270deg);
+margin-left: 20px;
 }
 .next{
   transform: rotate(270deg);
 }
 .news-btn :nth-child(2){
   margin-top: 0px;
-  margin-left: 260px;
+  margin-left: 280px;
 }
   
 
