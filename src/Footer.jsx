@@ -15,10 +15,10 @@ export const Footer = () => {
      
         <div className="links">
             <a id="firstlink" className="footer-links"  href="https://soft-panda-db902f.netlify.app">HOME</a>
-            <a className="footer-links" target="_blank" href="https://www.nseindia.com/">NSE</a>
-            <a className="footer-links" target="_blank" href="https://www.bseindia.com/">BSE</a>
-            <a className="footer-links" target="_blank" href="https://www.mcxindia.com/">MCX</a>
-            <a className="footer-links" target="_blank" href="https://www.binance.com/en">CRYPTO</a>
+            <a className="footer-links"  href="https://www.nseindia.com/">NSE</a>
+            <a className="footer-links"  href="https://www.bseindia.com/">BSE</a>
+            <a className="footer-links"  href="https://www.mcxindia.com/">MCX</a>
+            <a className="footer-links"  href="https://www.binance.com/en">CRYPTO</a>
 
         </div>
            
