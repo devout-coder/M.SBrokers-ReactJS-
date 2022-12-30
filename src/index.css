@@ -586,6 +586,7 @@ margin-left: 15px;
 .links{
   display: flex;
   flex-direction: column;
+justify-content: space-between;
 
 }
 }
