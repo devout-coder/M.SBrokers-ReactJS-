@@ -17,7 +17,7 @@ justify-content: space-evenly;
 }
 .newscontainer{
   height: 670px;
-  border-left: 1px solid slategrey;
+
 
   width: 730px;
 
@@ -32,6 +32,8 @@ right:50px;
 .news-btn{
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 20px;
 
 }
 .news-btn button{

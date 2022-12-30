@@ -8,7 +8,9 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
         pageNumber.push(i)
     }
     let CurrentPages = pageNumber.slice(startingIndex,lastIndex)
-    if(startingIndex <=0){
+    if(startingIndex <=0 && pageNumber.length > 8){
+        console.log(pageNumber.length);
+        console.log(lastIndex);
         return(
             <>
     <ul className='pageList'>
@@ -36,6 +38,24 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
     }}>Next</buttton>
     </ul>
     </>
+        )
+    }
+    if(startingIndex <=0 && pageNumber.length<=8){
+        console.log('hi');
+        return(
+            <>
+            <ul className='pageList'>
+                {CurrentPages.map(item=>{
+                    return(
+                        <li key={item}>
+                        <button  onClick={()=>ChangePage(item)}>
+                            {item}
+                        </button>
+                    </li>
+                        )
+                })}
+            </ul>
+            </>
         )
     }
     else{
