@@ -1,5 +1,15 @@
 let count = 0;
 const ListItems = ({stocks}) =>{
+
+    if(stocks?.length ===0){
+        return(
+            <div className="listcontainer">
+            <h2 className="noresult">No Result Found ...</h2>
+            </div>
+        )
+    }
+
+    else{
     return (
         <div className="listcontainer">
             <li className="heading">
@@ -39,6 +49,7 @@ const ListItems = ({stocks}) =>{
             })}
         </div>
     )
+        }
 
 }
 

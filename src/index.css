@@ -338,6 +338,14 @@ cursor: grab;
 .green{
   color: green;
 }
+.listcontainer h2{
+  color: gray;
+  position: relative;
+  top: 150px;
+  left: 150px;
+  font-weight: 500;
+  font-size: 25px;
+}
 @media only screen and (max-width: 392px){
   .navbar{
     margin-left: 5px;
@@ -407,6 +415,9 @@ padding: 5px 5px;
   font-size: 13px;
   padding: 5px 5px;
 }
+.loadingNews{
+  margin-left: 40px;
+}
 .newsbox{
   display: flex;
   flex-direction: column;
@@ -424,7 +435,7 @@ padding: 5px 5px;
 }
 .outlook{
   position: relative;
-  left: 25px;
+  left: 30px;
 }
 .newsItem{
   width: 150px;
@@ -471,15 +482,24 @@ padding: 5px 5px;
 }
 .prev{
 transform: rotate(270deg);
-margin-left: 20px;
+margin-left: 15px;
+
 }
 .next{
   transform: rotate(270deg);
+  position: relative;
+  right:18px;
 }
 .news-btn :nth-child(2){
   margin-top: 0px;
   margin-left: 280px;
 }
-  
-
+.listcontainer h2{
+  color: gray;
+  position: relative;
+  top: 150px;
+  left: 50px;
+  font-weight: 500;
+  font-size: 25px;
+}
 }
