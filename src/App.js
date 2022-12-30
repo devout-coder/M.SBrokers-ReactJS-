@@ -1,7 +1,8 @@
-import Navbar from './Navbar.jsx'
+import Header from './Header.jsx'
 import ListItems from './ListItems.jsx'
 import SearchBar from'./SearchBar.jsx'
 import News from "./news.jsx"
+import { Navbar } from './Navbar.jsx'
 import { Footer } from './Footer.jsx'
 import { PaginationStocks } from './PaginationStocks.jsx'
 import { PagesNews } from './PaginationNews.jsx'
@@ -165,7 +166,10 @@ if(type === 'Fetched'){
 
   return(
     <>
+      <Header/>
       <Navbar/>
+      <br></br>
+      <br></br>
       <div className='maincontainer'>
         <div className="container">
           <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
