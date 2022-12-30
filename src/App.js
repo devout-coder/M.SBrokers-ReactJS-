@@ -5,6 +5,7 @@ import News from "./news.jsx"
 import { Footer } from './Footer.jsx'
 import { PaginationStocks } from './PaginationStocks.jsx'
 import { PagesNews } from './PaginationNews.jsx'
+import { Startbutton } from './Startbutton.jsx'
 import { Player } from '@lottiefiles/react-lottie-player';
 
 import {useState,useEffect} from 'react';
@@ -189,7 +190,7 @@ if(type === 'Fetched'){
           <PagesNews nextNewsPage={NextNewsPage} previousNewsPage={PreviousNewsPage} />
         </div>
       </div>
-     
+     <Startbutton/>
       <Footer/>
       
     </>

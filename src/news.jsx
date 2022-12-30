@@ -12,8 +12,8 @@
                     </div>
                     <div className="feed">
                         <h3>{item?.title}</h3>
-                        <p>{`${item?.author} | ${item.date} ${item?.time}`}</p>
-                        <p>{item?.content} <a className="newslink" href={item?.readMoreUrl}>See More..</a></p>
+                        <p className="date">{`${item?.author} | ${item.date} ${item?.time}`}</p>
+                        <p className="Content">{item?.content} <a className="newslink" href={item?.readMoreUrl}>See More..</a></p>
                     </div>
                 </li>)}
                 )}

@@ -9,8 +9,6 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
     }
     let CurrentPages = pageNumber.slice(startingIndex,lastIndex)
     if(startingIndex <=0 && pageNumber.length > 8){
-        console.log(pageNumber.length);
-        console.log(lastIndex);
         return(
             <>
     <ul className='pageList'>
@@ -41,7 +39,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
         )
     }
     if(startingIndex <=0 && pageNumber.length<=8){
-        console.log('hi');
+
         return(
             <>
             <ul className='pageList'>

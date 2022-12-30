@@ -374,7 +374,7 @@ cursor: grab;
   justify-content: center;
 }
 .footer-icons{
-  color: rgb(157, 72, 72);
+  color: #9d4848;
   margin-left: 100px;
   margin: 30px;
   
@@ -398,6 +398,7 @@ cursor: grab;
   justify-content: center;
   flex-wrap: wrap;
 }
+.Start-btn{display: none;}
 @media only screen and (max-width: 392px){
   .sorry{
     margin-left: 30px;
@@ -502,7 +503,7 @@ padding: 5px 5px;
 }
 .outlook{
   position: relative;
-  left: 30px;
+  left: 33px;
 }
 .newsItem{
   width: 150px;
@@ -523,10 +524,11 @@ padding: 5px 5px;
   width:60px;
 }
 .feed h3{
-  font-size: 10px;
+  font-size: 13px;
 }
-.feed p{
-  font-size: 7px;
+
+.Content{
+  font-size: 8px;
 }
 .NewsCarousel{
   flex-direction: column;
@@ -569,6 +571,25 @@ margin-left: 15px;
   font-weight: 500;
   font-size: 25px;
 }
+.Start-btn {
+  display: inline-block;}
+  .Start-btn button{
+    padding: 15px 20px;
+    margin-left: 130px;
+    font-size: larger;
+    font-weight: bold;
+      border-radius: 20px;
+      font-family: 'Fira Sans', sans-serif;
+      border: none;
+      color: white;
+      background-image: linear-gradient(to right, #9d4848, #713855, #3d2e4b, #17202e, #060809);
+  }
+  .Start-btn button:hover{
+    border: 1px solid #17202e;
+    color: #713855;
+    background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
+  }
+
 .footer{
   margin-top: 100px;
   width: 392px;
@@ -578,15 +599,21 @@ margin-left: 15px;
   justify-content: space-around;
   flex-direction: row;
 
+
 }
 .icons{
   display: flex;
   flex-direction: column;
+
 }
 .links{
   display: flex;
   flex-direction: column;
 justify-content: space-between;
 
+
+}
+.icons a,.links a,.copyright a{
+  font-family: 'Fira Sans', sans-serif;
 }
 }
