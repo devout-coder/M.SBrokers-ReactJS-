@@ -2,6 +2,7 @@ import Navbar from './Navbar.jsx'
 import ListItems from './ListItems.jsx'
 import SearchBar from'./SearchBar.jsx'
 import News from "./news.jsx"
+import { Footer } from './Footer.jsx'
 import { PaginationStocks } from './PaginationStocks.jsx'
 import { PagesNews } from './PaginationNews.jsx'
 import { Player } from '@lottiefiles/react-lottie-player';
@@ -146,7 +147,7 @@ if(type === 'TryAgain'){
   return(
 <>
     <div className='sorry'>
-       <Player
+       <Player className='tryAgainplayer'
               autoplay
               loop
               src="https://assets2.lottiefiles.com/packages/lf20_ge2cws3x.json"
@@ -188,6 +189,8 @@ if(type === 'Fetched'){
           <PagesNews nextNewsPage={NextNewsPage} previousNewsPage={PreviousNewsPage} />
         </div>
       </div>
+     
+      <Footer/>
       
     </>
 );
