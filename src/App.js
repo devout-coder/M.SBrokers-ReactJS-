@@ -153,7 +153,7 @@ if(type === 'TryAgain'){
               autoplay
               loop
               src="https://assets2.lottiefiles.com/packages/lf20_ge2cws3x.json"
-              style={{ height: '600px', width: '600px' }}>
+              style={{ height: '300px', width: '300px' }}>
       </Player>
     </div>
 

@@ -434,13 +434,21 @@ cursor: grab;
 }
 .Start-btn{display: none;}
 @media only screen and (max-width: 392px){
-  .sorry{
-    margin-left: 30px;
+  .loading{
+    margin: 0;
     margin-top: 100px;
-    height: 200px;
-    width: 250px;
-    padding: 0px;
+    margin-left: 30px;
+    height: 300px;
+    width: 300px;
   }
+  .sorry{
+    margin: 0;
+    margin-top: 100px;
+  margin-left: 30px;
+    height: 300px;
+    width: 300px;
+  }
+  
 .tryAgainplayer{
   height: 250px;
   width: 250px;
