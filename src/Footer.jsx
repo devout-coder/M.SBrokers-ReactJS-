@@ -23,7 +23,7 @@ export const Footer = () => {
         </div>
            
             <div className="copyright">
-                <a className="footer-links" href="">&copy; 2022 Grow More -LTD</a>
+                <a className="footer-links" href="https://soft-panda-db902f.netlify.app">&copy; 2022 Grow More -LTD</a>
 
             </div>
 
