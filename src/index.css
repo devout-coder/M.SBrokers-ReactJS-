@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 code {
@@ -420,6 +421,8 @@ cursor: grab;
   .navbar h1{
     margin-left: 5px;
     font-size: 35px;
+    position: relative;
+    right: 38px;
   }
   .pannel{
     display: none;
@@ -568,7 +571,7 @@ margin-left: 15px;
 }
 .footer{
   margin-top: 100px;
-  width: 390px;
+  width: 392px;
   height: 450px;
   display: flex;
   flex-wrap: wrap;
