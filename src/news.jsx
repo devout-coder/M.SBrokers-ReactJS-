@@ -3,6 +3,7 @@
     return(
         <div className="newsbox">
             <h1 className="outlook">Today's Outlook</h1>
+            <br></br>
             <ul className="newscontainer">
                 {news?.map((item) => {
                 return (

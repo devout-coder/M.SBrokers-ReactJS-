@@ -169,10 +169,13 @@ if(type === 'Fetched'){
       <div className='maincontainer'>
         <div className="container">
           <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
+          <br></br>
           <ListItems stocks={CurrentStocksData}/>
           <PaginationStocks ChangePage={handleChangePage} TotalPost={data.length} postPerPage={postPerPage}/>
 
         </div>
+        <br></br>
+        <br></br>
         <div className='newscontainer'>
           {newsdata.length === 0 ? (
           <div className='loadingNews'>

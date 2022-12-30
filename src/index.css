@@ -200,6 +200,7 @@ font-size: 15px;
   border: 1px solid rgb(157, 72, 72);
   border-radius: 8px;
   color: rgb(157, 72, 72);
+  font-family: 'Fira Sans', sans-serif;
 }
 .buttons button:hover{
   background-color:rgb(157, 72, 72);
@@ -589,6 +590,14 @@ margin-left: 15px;
     color: #713855;
     background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
   }
+  .shift{
+    margin-left: 135px;
+    font-size: 16px;
+  }
+.info-Shift{
+  margin-left: 35px;
+  font-size: 16px;
+}
 
 .footer{
   margin-top: 100px;
