@@ -53,7 +53,7 @@ justify-content: space-evenly;
   height: 670px;
 
 
-  width: 730px;
+  width: 530px;
 
 }
 .NewsCarousel{
@@ -123,6 +123,9 @@ cursor: grab;
   text-decoration: none;
 }
 .feed :nth-child(2){
+  font-size: 8px;
+}
+.Content{
   font-size: 12px;
 }
 .newsItem{
@@ -137,6 +140,7 @@ cursor: grab;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 25px;
+  height: 250px;
 
 }
 
@@ -198,7 +202,7 @@ text-decoration: none;
 .searchbar{
   margin-left: 25px;
 
-  width: 500px;
+  width: 650px;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
 
@@ -221,12 +225,13 @@ text-decoration: none;
 }
 .buttons{
   
-width: 88%;
+width: 100%;
 
 display: flex;
-justify-content: space-between;
+justify-content: space-evenly;
 
 }
+
 .buttons button{
 margin: 0 42px 10px 0;
   font-weight: bolder;
@@ -254,7 +259,7 @@ font-size: 15px;
   0px 10.9px 35px rgba(0, 0, 0, 0.209),
   0px 36px 80px rgba(0, 0, 0, 0.32)
 ;
-  width: 500px;
+  width: 650px;
   height: 500px;
 
   margin-left: 30px;
@@ -337,7 +342,7 @@ right: 15px;
   border: 1px solid rgb(157, 72, 72);
 }
 .pageList{
-  width: 470px;
+  width: 620px;
   padding: 0;
   margin-left: 60px;
 }
