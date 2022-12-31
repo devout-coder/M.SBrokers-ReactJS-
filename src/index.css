@@ -74,6 +74,7 @@ align-items: center;
   left: 20px;
 
 
+
 }
 .news-btn button{
 
@@ -514,7 +515,9 @@ cursor: grab;
 .listcontainer{
   width: 280px;
 margin:  20px 55px;
-height: 415px;
+height: 435px;
+
+
 padding: 5px 5px;
 
 }
@@ -570,7 +573,10 @@ padding: 5px 5px;
   overflow: hidden;
 }
 .news-btn{
-  flex-direction: row;
+  flex-direction: row;width: 390px;
+
+
+
 }
 .newsItem{
   width: 350px;
@@ -594,29 +600,36 @@ padding: 5px 5px;
 
 
   height: 60px;
-  width: 385px;
+  width: 325px;
   position: relative;
   bottom: 485px;
 
 }
-.news-btn{
-  margin-left: 50px;
-}
+
 .news-btn .button{
-  height: 30px;
+  height: 20px;
   width: 30px;
   padding: 0px;
 
 }
 .prev{
 transform: rotate(270deg);
-margin-left: 15px;
+
+position: relative;
+left: 68px;
+top: 10px;
+
+
+
+
+
 
 }
 .next{
   transform: rotate(270deg);
   position: relative;
-  right:18px;
+left: 40px;
+  top: 10px;
 }
 .news-btn :nth-child(2){
   margin-top: 0px;
