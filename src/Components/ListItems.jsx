@@ -1,6 +1,8 @@
+import {MyStockContext} from "../context.js"
+import {useContext} from "react"
 let count = 0;
-const ListItems = ({stocks}) =>{
-
+const ListItems = () =>{
+const stocks = useContext(MyStockContext)
     if(stocks?.length ===0){
         return(
             <div className="listcontainer">
@@ -11,12 +13,14 @@ const ListItems = ({stocks}) =>{
 
     else{
     return (
+        <>
         <div className="listcontainer">
             <li className="heading">
                 <p>Index</p>
                 <p>Price</p>
                 <p>Change %</p>
             </li>
+            
             {stocks?.map(stock => {
                 return (
                     <section key={count++} className="ul">
@@ -48,6 +52,7 @@ const ListItems = ({stocks}) =>{
             </section> )
             })}
         </div>
+    </>
     )
         }
 

@@ -1,21 +1,20 @@
-import Header from './Header.jsx'
-import ListItems from './ListItems.jsx'
-import SearchBar from'./SearchBar.jsx'
-import News from "./news.jsx"
-import { Navbar } from './Navbar.jsx'
-import { Footer } from './Footer.jsx'
-import { PaginationStocks } from './PaginationStocks.jsx'
-import { PagesNews } from './PaginationNews.jsx'
-import { Startbutton } from './Startbutton.jsx'
+import Header from './Components/Header.jsx'
+import ListItems from './Components/ListItems.jsx'
+import SearchBar from'./Components/SearchBar.jsx'
+import News from "./Components/news.jsx"
+import { Navbar } from './Components/Navbar.jsx'
+import { Footer } from './Components/Footer.jsx'
+import { PaginationStocks } from './Components/PaginationStocks.jsx'
+import { PagesNews } from './Components/PaginationNews.jsx'
+import { Startbutton } from './Components/Startbutton.jsx'
 import { Player } from '@lottiefiles/react-lottie-player';
-
+import {MyStockContext,MyNewsContext} from "./context.js"
 import {useState,useEffect} from 'react';
 
 let stocks = null
 
 
 export default function App() {
-
   const[data,setdata] = useState([])
   const [type,setType] = useState('Fetching')
   const[newsdata,setNewsdata] = useState([])
@@ -132,40 +131,27 @@ const CurrentNewsData = newsdata.slice(indexOfFirstNews,indexOfLastNews)
 
 if(type === 'Fetching'){
   return(
-    <>
     <div className='loading' >
-         <Player
-              autoplay
-              loop
-              src="https://assets9.lottiefiles.com/packages/lf20_kxsd2ytq.json"
+         <Player autoplay loop src="https://assets9.lottiefiles.com/packages/lf20_kxsd2ytq.json"
               style={{ height: '300px', width: '300px' }}>
           </Player>
     </div>
-    </>
-
   )
 }
 if(type === 'TryAgain'){
   return(
-<>
     <div className='sorry'>
-       <Player className='tryAgainplayer'
-              autoplay
-              loop
-              src="https://assets2.lottiefiles.com/packages/lf20_ge2cws3x.json"
-              style={{ height: '300px', width: '300px' }}>
+       <Player className='tryAgainplayer' autoplay loop src="https://assets2.lottiefiles.com/packages/lf20_ge2cws3x.json"
+            style={{ height: '300px', width: '300px' }}>
       </Player>
     </div>
-
-</>
-
-
   )
 }
 if(type === 'Fetched'){
-
   return(
     <>
+      <MyStockContext.Provider value={CurrentStocksData}>
+      <MyNewsContext.Provider value={CurrentNewsData}>
       <Header/>
       <Navbar/>
       <br></br>
@@ -174,9 +160,8 @@ if(type === 'Fetched'){
         <div className="container">
           <SearchBar  RenderType={handleRenderData} filter={handleFilter}  />
           <br></br>
-          <ListItems stocks={CurrentStocksData}/>
+          <ListItems />
           <PaginationStocks ChangePage={handleChangePage} TotalPost={data.length} postPerPage={postPerPage}/>
-
         </div>
         <br></br>
         <br></br>
@@ -199,7 +184,8 @@ if(type === 'Fetched'){
       </div>
      <Startbutton/>
       <Footer/>
-      
+      </MyNewsContext.Provider>
+      </MyStockContext.Provider>
     </>
 );
 }

@@ -1,5 +1,9 @@
+ import {MyNewsContext} from "../context.js"
+ import {useContext} from "react"
+
  let count = 0
- const News = ({news}) =>{
+ const News = () =>{
+    const news = useContext(MyNewsContext)
     return(
         <div className="newsbox">
             <h1 className="outlook">Today's Outlook</h1>
