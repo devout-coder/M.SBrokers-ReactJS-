@@ -26,20 +26,20 @@ export default function App() {
   useEffect(() => {
     let newscontroller = new AbortController();
     let newsSignal = newscontroller.signal;
-    // fetch("https://inshorts.deta.dev/news?category=business", newsSignal)
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     setNewsdata(res.data);
-    //   })
-    //   .catch(console.log("cannot fetch news api"));
+    fetch("https://inshorts.me/news/topics/business", newsSignal)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res.data.articles);
+        setNewsdata(res.data.articles);
+      })
+      .catch(console.log("cannot fetch news api"));
     return () => {
       newscontroller.abort();
     };
   }, []);
 
   //useEffect stocks
-
+  // https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TATAMOTORS.BSE&apikey=HGJWFG4N8AQ66ICD
   useEffect(() => {
     let controller = new AbortController();
     let signal = controller.signal;

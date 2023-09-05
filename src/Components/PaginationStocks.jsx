@@ -22,7 +22,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
                 )
         })}
 
-    <buttton  className="page-btn2" onClick={()=>{
+    <button  className="page-btn2" onClick={()=>{
         if(lastIndex >=44){
             ChangePage(0)
             setStartingIndex(0)
@@ -33,7 +33,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
             setStartingIndex(n=>n+8)
             setLastIndex(n=>n+8)
         }
-    }}>Next</buttton>
+    }}>Next</button>
     </ul>
     </>
         )
@@ -60,7 +60,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
     return (
     <>
     <ul className='pageList'>
-    <buttton className="page-btn" onClick={()=>{
+    <button className="page-btn" onClick={()=>{
         if(startingIndex<=0){
 
             setStartingIndex(0)
@@ -71,7 +71,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
             setStartingIndex(n=>n-8)
             setLastIndex(n=>n-8)
         }
-    }}> Prev </buttton>
+    }}> Prev </button>
         {CurrentPages.map(item=>{
             return(
                 <li key={item}>
@@ -82,7 +82,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
                 )
         })}
 
-    <buttton  className="page-btn2" onClick={()=>{
+    <button  className="page-btn2" onClick={()=>{
         if(lastIndex >=44){
             ChangePage(1)
             setStartingIndex(0)
@@ -93,7 +93,7 @@ export const PaginationStocks = ({postPerPage,TotalPost,ChangePage}) => {
             setStartingIndex(n=>n+8)
             setLastIndex(n=>n+8)
         }
-    }}>Next</buttton>
+    }}>Next</button>
     </ul>
     </>
   )
