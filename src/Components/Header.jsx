@@ -4,10 +4,8 @@ const Header = () =>{
         <>
             <div className='header'>
                 <div className='logo'></div>
-                <h1>M.S Brokers</h1>
+                <h1>TSEC Brokers</h1>
                 <div className='pannel'>
-                <p>Login /</p>
-                <p >Signup</p>
                 </div>
             </div>
         </>
