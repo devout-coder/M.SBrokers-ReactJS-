@@ -10,6 +10,7 @@ import { Startbutton } from "./Components/Startbutton";
 import { Footer } from "./Components/Footer";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { MyNewsContext, MyStockContext } from "./context";
+// import Chatbot from "./chatbot";
 
 let stocks = null;
 const Main = () => {
